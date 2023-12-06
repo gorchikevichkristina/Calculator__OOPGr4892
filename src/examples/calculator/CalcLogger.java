@@ -1,8 +1,8 @@
 package examples.calculator;
 
-public class CalcLogger implements Loggable{
+public class CalcLogger implements Loggable {
     @Override
-    public void saveLog(String str) {
+    public void log(String str) {
         System.out.println("Log message: " + str);
     }
 }

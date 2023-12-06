@@ -1,6 +1,6 @@
 package examples.calculator;
 
-public final class Calculator implements Calculable {
+public final class Calculator implements ICalculator {
 
     private int primaryArg;
 
@@ -9,13 +9,13 @@ public final class Calculator implements Calculable {
     }
 
     @Override
-    public Calculable sum(int arg) {
+    public ICalculator sum(int arg) {
         primaryArg += arg;
         return this;
     }
 
     @Override
-    public Calculable multi(int arg) {
+    public ICalculator multi(int arg) {
         primaryArg *= arg;
         return this;
     }

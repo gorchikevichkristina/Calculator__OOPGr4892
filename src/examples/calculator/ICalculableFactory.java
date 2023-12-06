@@ -1,5 +1,5 @@
 package examples.calculator;
 
 public interface ICalculableFactory {
-    Calculable create(int primaryArg, boolean logFlag);
+    ICalculator create(int primaryArg, boolean logFlag);
 }

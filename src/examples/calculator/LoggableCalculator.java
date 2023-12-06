@@ -1,33 +1,32 @@
 package examples.calculator;
 
-public class LoggableCalculator implements Calculable{
+public class LoggableCalculator implements ICalculator {
 
-    protected Calculable calc;
+    protected ICalculator calc;
     Loggable calcLogger = new CalcLogger();
 
-
-    public LoggableCalculator(Calculable calc) {
-        calcLogger.saveLog("" + calc.getResult());
+    public LoggableCalculator(ICalculator calc) {
+        calcLogger.log("" + calc.getResult());
         this.calc = calc;
     }
 
 
     @Override
-    public Calculable sum(int arg) {
-        calcLogger.saveLog(calc.getResult() + " + " + arg);
+    public ICalculator sum(int arg) {
+        calcLogger.log(calc.getResult() + " + " + arg);
         return this.calc.sum(arg);
     }
 
     @Override
-    public Calculable multi(int arg) {
-        calcLogger.saveLog(calc.getResult() + " * " + arg);
+    public ICalculator multi(int arg) {
+        calcLogger.log(calc.getResult() + " * " + arg);
         return this.calc.multi(arg);
     }
 
     @Override
     public int getResult() {
         int result = this.calc.getResult();
-        calcLogger.saveLog(" = " + result);
+        calcLogger.log(" = " + result);
         return this.calc.getResult();
     }
 }

@@ -13,7 +13,7 @@ public class ViewCalculator {
     public void run() {
         while (true) {
             int primaryArg = promptInt("Введите первый аргумент: ");
-            Calculable calculator = calculableFactory.create(primaryArg, true);
+            ICalculator calculator = calculableFactory.create(primaryArg, true);
             while (true) {
                 String cmd = prompt("Введите команду (*, +, =) : ");
                 if (cmd.equals("*")) {
